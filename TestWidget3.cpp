@@ -72,7 +72,7 @@ void TestWidget3::on_load8bit_clicked()
 	bool bFileOpen = DataFile.open(QIODevice::ReadOnly);
 	if (!bFileOpen)
 	{
-		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geöffnet werden");
+		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geÃ¶ffnet werden");
 		return;
 	};
 	DataFile.read((char*)data->m_pImage, 512 * 512);
@@ -112,7 +112,7 @@ void TestWidget3::on_load12bit_clicked()
 	bool bFileOpen = DataFile.open(QIODevice::ReadOnly);
 	if (!bFileOpen)
 	{
-		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geöffnet werden");
+		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geÃ¶ffnet werden");
 		return;
 	}
 	DataFile.read((char*)data->m_pImage, 512 * 512 * sizeof(short));
@@ -154,8 +154,7 @@ void TestWidget3::on_HUWert_valueChanged()
 	// Verbindet Bildeinlesen mit Slider
 	TestWidget3::Update2DView();
 }
-
-/*void TestWidget3::Update2DView()
+void TestWidget3::Update2DView()
 {
 	// test data for \ref TestWidget3
 	data->widget1Finished = true;
@@ -174,7 +173,7 @@ void TestWidget3::on_HUWert_valueChanged()
 	bool bFileOpen = DataFile.open(QIODevice::ReadOnly);
 	if (!bFileOpen)
 	{
-		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geöffnet werden");
+		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geÃ¶ffnet werden");
 		return;
 	}
 	DataFile.read((char*)data->m_3DImage, 66560 * 512 * sizeof(short));
@@ -229,31 +228,31 @@ void TestWidget3::on_HUWert_valueChanged()
 	}
 	ui.lbImage->setPixmap(QPixmap::fromImage(image));
 
-}*/
+}
 
-//int TestWidget3::fenster(int startValue, int windowWidth, int fileValue)
-//{
-//	int y;
-//	if (fileValue <= startValue)
-//	{
-//		y = 0;
-//	}
-//	else if (fileValue >= (startValue + windowWidth))
-//	{
-//		y = 255;
-//	}
-//	else
-//	{
-//		y = (fileValue - startValue)* 255.0 / (windowWidth);
-//	}
-//	return y;
-//}
+int TestWidget3::fenster(int startValue, int windowWidth, int fileValue)
+{
+	int y;
+	if (fileValue <= startValue)
+	{
+		y = 0;
+	}
+	else if (fileValue >= (startValue + windowWidth))
+	{
+		y = 255;
+	}
+	else
+	{
+		y = (fileValue - startValue)* 255.0 / (windowWidth);
+	}
+	return y;
+}
 
 // Beispielfunktion, wie man auf eine Funktion aus einer DLL zugreift
-/*void TestWidget3::useDLL()
+void TestWidget3::useDLL()
 {
 	int result = answer("What is the answer to life, the universe and everything?");
-}*/
+}
 void TestWidget3::Tiefenkarte(int schicht)
 {
 	
@@ -296,7 +295,7 @@ void TestWidget3::Update2DView()
 	bool bFileOpen = DataFile.open(QIODevice::ReadOnly);
 	if (!bFileOpen)
 	{
-		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geöffnet werden");
+		QMessageBox::critical(this, "ACHTUNG", "Datei konnte nicht geÃ¶ffnet werden");
 		return;
 	}
 	DataFile.read((char*)data->m_3DImage, 66560 * 512 * sizeof(short));
